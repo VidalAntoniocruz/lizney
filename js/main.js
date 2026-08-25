@@ -366,8 +366,8 @@ function iniciarRevealNombres() {
   nombres.forEach(el => {
     if (el.classList.contains('envelope-subtitle')) {
       setTimeout(() => {
-        el.classList.add('reveal');
-      }, 600);
+  document.querySelector('.page-date')?.classList.add('in-view');
+}, 3000);
     } else {
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
