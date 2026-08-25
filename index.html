@@ -50,12 +50,33 @@
           <span class="date-month">Septiembre</span>
           <span class="date-year">2026</span>
         </div>
-        <div class="scroll-hint" aria-hidden="true">
-          <span>Desliza</span>
-          <span>↓</span>
+        <!-- Contador -->
+        <div class="countdown" aria-label="Cuenta regresiva">
+            <div class="cd-box">
+                <span class="cd-num" id="days">00</span>
+                <span class="cd-label">Días</span>
+            </div>
+            <div class="cd-box">
+                <span class="cd-num" id="hours">00</span>
+                <span class="cd-label">Horas</span>
+            </div>
+            <div class="cd-box">
+                <span class="cd-num" id="minutes">00</span>
+                <span class="cd-label">Min</span>
+            </div>
+            <div class="cd-box">
+                <span class="cd-num" id="seconds">00</span>
+                <span class="cd-label">Seg</span>
+            </div>
         </div>
-      </div>
-    </section>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <span>Desliza</span>
+            <span>↓</span>
+        </div>
+    </div>
+</section>
+        <!-- ⚠️ ELIMINADO: segundo scroll-hint duplicado -->
 
     <!-- 🎬 PÁGINA 2: VIDEO + BIENVENIDA -->
     <section class="page page-intro">
@@ -71,93 +92,72 @@
 
         <div class="quote-container">
           <img src="assets/img/mariposas.webp" alt="" class="rose rose-left">
-          <p class="intro-quote">
-            "Los momentos más felices de la vida se tornan gratos cuando tenemos la suerte de compartirlos con los familiares y amigos más queridos. Tú estás entre ellos, por tal motivo quiero festejar mi alegría."
-          </p>
+          <p class="intro-quote" style="font-family: 'Tiro Bangla', serif; text-transform: none !important; font-variant: normal !important;">
+    "Los momentos más felices de la vida se tornan gratos cuando tenemos la suerte de compartirlos con los familiares y amigos más queridos. Tú estás entre ellos, por tal motivo quiero festejar mi alegría."
+</p>
           <img src="assets/img/mariposa.webp" alt="" class="rose rose-right">
         </div>
 
-        <p class="parents-names">Con la bendición de Dios y mis padres</p>
-        <p class="parents-names"><strong>Carlos &amp; Clara</strong></p>
+        <p class="parents-names">Con la bendición de Dios y mi fa</p>
+        <p class="parents-names"><strong> &amp; </strong></p>
       </div>
     </section>
 
-    <!-- ⏱️ PÁGINA 3: FECHA Y CONTADOR -->
-    <section class="page page-date">
-      <div class="page-inner">
-        <h2 class="section-title"></h2>
-        <div class="ornament-divider" aria-hidden="true">✦</div>
-
+    <!-- ⏱️ PÁGINA 3: FECHA + REGALOS Y VESTIMENTA -->
+<section class="page page-date">
+    <div class="page-inner">
+        <!-- ELIMINADOS h2 y divisor vacíos -->
         <div class="date-showcase">
-          <div class="date-word">Sábado</div>
-          <div class="date-big">19</div>
-          <div class="date-word">Septiembre</div>
+            <div class="date-word">Sábado</div>
+            <div class="date-big">19</div>
+            <div class="date-word">Septiembre</div>
         </div>
-
-        <div class="countdown" aria-label="Cuenta regresiva">
-          <div class="cd-box">
-            <span class="cd-num" id="days">00</span>
-            <span class="cd-label">Días</span>
-          </div>
-          <div class="cd-box">
-            <span class="cd-num" id="hours">00</span>
-            <span class="cd-label">Horas</span>
-          </div>
-          <div class="cd-box">
-            <span class="cd-num" id="minutes">00</span>
-            <span class="cd-label">Min</span>
-          </div>
-          <div class="cd-box">
-            <span class="cd-num" id="seconds">00</span>
-            <span class="cd-label">Seg</span>
-          </div>
-        </div>
-
+        
         <div class="time-announce">
-          <span class="time-word">Hora</span>
-          <span class="time-big">7:00 P.M.</span>
-          <span class="time-note">Puntual</span>
+            <span class="time-word">Hora</span>
+            <span class="time-big">7:00 P.M.</span>
+            <span class="time-note">Puntual</span>
         </div>
-      </div>
-    </section>
-
-    <!-- 🎁 PÁGINA 4: REGALOS Y VESTIMENTA -->
-    <section class="page page-gifts">
-      <div class="page-inner">
+        
+        <div class="ornament-divider" aria-hidden="true">✦</div>
+        
+        <!-- Regalos -->
         <div class="info-card">
-          <div class="info-icon">
-            <img src="assets/img/sobre.webp" alt="" class="icon-illustration icon-sobre">
-          </div>
-          <h3 class="info-title">Lluvia de Sobres</h3>
-          <p class="info-text">
-            Tu mejor regalo es tu presencia.<br>
-            Si deseas obsequiarme, será recibido con mucho cariño.
-          </p>
+            <div class="info-icon">
+                <img src="assets/img/sobrec.webp" alt="" class="icon-illustration icon-sobre">
+            </div>
+            <h3 class="info-title">Lluvia de Sobres</h3>
+           <p class="info-text" style="text-transform: none !important; font-variant: normal !important; font-family: 'Tiro Bangla', serif !important;">
+    Tu mejor regalo es tu presencia.<br>
+    Si deseas obsequiarme, será recibido con mucho cariño.
+</p>
         </div>
-
+        
+        <!-- Dress Code -->
         <div class="info-card">
-          <div class="info-icon">
-            <img src="assets/img/etiqueta.webp" alt="" class="etiqueta-icon">
-          </div>
-          <h3 class="info-title">Dress Code</h3>
-          <div class="dress-grid">
-            <div class="dress-item">
-              <strong>Mujeres</strong>
-              <span>Vestido</span>
+            <div class="info-icon">
+                <img src="assets/img/etiqueta.webp" alt="" class="etiqueta-icon">
             </div>
-            <div class="dress-item">
-              <strong>Hombres</strong>
-              <span>Formal</span>
+            <h3 class="info-title">Dress Code</h3>
+            <div class="dress-grid">
+                <div class="dress-item">
+                    <strong>Mujeres</strong>
+                    <span>Vestido</span>
+                </div>
+                <div class="dress-item">
+                    <strong>Hombres</strong>
+                    <span>Formal</span>
+                </div>
             </div>
-          </div>
-          <p class="info-note">
-            Se reserva el color <span class="reserved">azul</span> para la quinceañera.
-          </p>
+            <p class="info-note">
+                Se reserva el color <span class="reserved">azul</span> para la quinceañera.
+            </p>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 📍 PÁGINA 5: LUGAR Y CONFIRMACIÓN -->
+
+    <!-- 📍 PÁGINA 4: LUGAR Y CONFIRMACIÓN -->
     <section class="page page-venue">
       <div class="page-inner">
         <div class="info-card">
@@ -169,7 +169,7 @@
             Portales de Alicante<br>
             Conjunto 3, Bloque 3
           </p>
-          <a href="https://maps.google.com" target="_blank" rel="noopener"
+          <a href="https://maps.app.goo.gl/pP4hBiUkru7AsoDm9" target="_blank" rel="noopener"
              class="btn btn-primary" aria-label="Ver ubicación en el mapa">
             Ver en el mapa
           </a>
@@ -191,43 +191,49 @@
         </div>
       </div>
     </section>
+  <!-- 🖼️ PÁGINA 5: GALERÍA -->
+<section class="page page-gallery">
+  <div class="page-inner">
+    <h2 class="section-title">
+  <span class="title-line1">Un recorrido de</span>
+  <span class="title-line2">
+    <span class="serif-text">estos </span>
+    <span class="script-big">15</span>
+    <span class="serif-text"> años</span>
+  </span>
+</h2>
+    <div class="ornament-divider" aria-hidden="true">✦</div>
 
-    <!-- 🖼️ PÁGINA 6: GALERÍA -->
-    <section class="page page-gallery">
-      <div class="page-inner">
-        <h2 class="section-title">Nuestros Momentos</h2>
-        <div class="ornament-divider" aria-hidden="true">✦</div>
-
-        <div class="frame-slideshow" id="slideshow" aria-label="Galería de fotos">
-          <div class="slides">
-            <img src="assets/img/foto1.webp" alt="Momento 1" class="slide active">
-            <img src="assets/img/foto2.webp" alt="Momento 2" class="slide">
-            <img src="assets/img/foto3.webp" alt="Momento 3" class="slide">
-            <img src="assets/img/foto4.webp" alt="Momento 4" class="slide">
-            <img src="assets/img/foto5.webp" alt="Momento 5" class="slide">
-            <img src="assets/img/foto6.webp" alt="Momento 6" class="slide">
-            <img src="assets/img/foto7.webp" alt="Momento 7" class="slide">
-            <img src="assets/img/foto8.webp" alt="Momento 8" class="slide">
-            <img src="assets/img/foto9.webp" alt="Momento 9" class="slide">
-          </div>
-          <img src="assets/img/marco.png" alt="" class="frame">
-        </div>
-
-        <div class="dots" role="tablist">
-          <button class="dot active" data-slide="0" aria-label="Foto 1"></button>
-          <button class="dot" data-slide="1" aria-label="Foto 2"></button>
-          <button class="dot" data-slide="2" aria-label="Foto 3"></button>
-          <button class="dot" data-slide="3" aria-label="Foto 4"></button>
-          <button class="dot" data-slide="4" aria-label="Foto 5"></button>
-          <button class="dot" data-slide="5" aria-label="Foto 6"></button>
-          <button class="dot" data-slide="6" aria-label="Foto 7"></button>
-          <button class="dot" data-slide="7" aria-label="Foto 8"></button>
-          <button class="dot" data-slide="8" aria-label="Foto 9"></button>          
-        </div>
+    <div class="frame-slideshow" id="slideshow" aria-label="Galería de fotos">
+      <div class="slides">
+        <img src="assets/img/foto1.webp" alt="Momento 1" class="slide active">
+        <img src="assets/img/foto2.webp" alt="Momento 2" class="slide">
+        <img src="assets/img/foto3.webp" alt="Momento 3" class="slide">
+        <img src="assets/img/foto4.webp" alt="Momento 4" class="slide">
+        <img src="assets/img/foto5.webp" alt="Momento 5" class="slide">
+        <img src="assets/img/foto6.webp" alt="Momento 6" class="slide">
+        <img src="assets/img/foto7.webp" alt="Momento 7" class="slide">
+        <img src="assets/img/foto8.webp" alt="Momento 8" class="slide">
+        <img src="assets/img/foto9.webp" alt="Momento 9" class="slide">
       </div>
-    </section>
+      <img src="assets/img/marco.png" alt="" class="frame">
+    </div>
 
-    <!-- 💌 PÁGINA 7: DESPEDIDA -->
+    <div class="dots" role="tablist">
+      <button class="dot active" data-slide="0" aria-label="Foto 1"></button>
+      <button class="dot" data-slide="1" aria-label="Foto 2"></button>
+      <button class="dot" data-slide="2" aria-label="Foto 3"></button>
+      <button class="dot" data-slide="3" aria-label="Foto 4"></button>
+      <button class="dot" data-slide="4" aria-label="Foto 5"></button>
+      <button class="dot" data-slide="5" aria-label="Foto 6"></button>
+      <button class="dot" data-slide="6" aria-label="Foto 7"></button>
+      <button class="dot" data-slide="7" aria-label="Foto 8"></button>
+      <button class="dot" data-slide="8" aria-label="Foto 9"></button>          
+    </div>
+  </div>
+</section>
+
+    <!-- 💌 PÁGINA 6: DESPEDIDA -->
    <section class="page page-end">
   <div class="page-inner">
     <p class="end-label">Con amor</p>
