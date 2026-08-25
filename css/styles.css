@@ -5,6 +5,7 @@
    - Fondo azul navy sólido para página 2
    - Nuevos estilos para .quote-container y .rose
    - Corregidos media queries anidados inválidos
+   - Eliminado anidamiento inválido en .page-intro .intro-quote
    ═══════════════════════════════════════════════════════════════ */
 
 /* ============ VARIABLES LOCALES DEL SOBRE ============ */
@@ -88,21 +89,20 @@ button {
 
 /* ============ 📮 PANTALLA 0: SOBRE ============ */
 .envelope-screen {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background:
-    url('../assets/img/muneeca1.webp') center / cover no-repeat,
-    linear-gradient(160deg, var(--azul-profundo) 0%, var(--azul-marino) 50%, var(--azul-oscuro) 100%);
-  z-index: var(--z-sobre);
-  padding: 20px;
-  text-align: center;
-  transition: opacity 1s ease, visibility 1s ease;
+position: fixed;
+inset: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background:
+url('../assets/img/model0.webp') center center / auto 100% no-repeat,
+linear-gradient(160deg, var(--azul-profundo) 0%, var(--azul-marino) 50%, var(--azul-oscuro) 100%);
+z-index: var(--z-sobre);
+padding: 20px;
+text-align: center;
+transition: opacity 1s ease, visibility 1s ease;
 }
-
 /* 🌑 Overlay oscuro para legibilidad */
 .envelope-screen::before {
   content: '';
@@ -130,7 +130,7 @@ button {
 
 /* Título "Mis Quince" */
 .envelope-title {
-  font-family: 'Tiro Bangla', regular;
+  font-family: 'Tiro Bangla', serif; /* ✅ corregido: sin 'regular' */
   font-size: clamp(1.8rem, 6vw, 2.8rem);
   color: var(--dorado);
   text-shadow: 0 2px 20px rgba(239, 182, 76, 0.4);
@@ -145,8 +145,8 @@ button {
 /* Nombre "Lizdany" */
 .envelope-subtitle {
   font-family: 'VeryBerry', serif;
- font-size: clamp(3.5rem, 14vw, 6.5rem); /* un poco más pequeño */
-font-synthesis: none;           /* evita bold/italic sintético */
+ font-size: clamp(3.5rem, 14vw, 6.5rem);
+font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -332,22 +332,22 @@ font-synthesis: none;           /* evita bold/italic sintético */
       rgba(13, 21, 106, 0.88) 35%,
       rgba(13, 21, 106, 0.95) 100%
     ),
-    radial-gradient(ellipse at top, rgba(239, 182, 76, 0.12), transparent 60%),
-    url('../assets/img/fondopag1.webp') right center / auto 85% no-repeat,
+    radial-gradient(ellipse at top, rgba(239, 182, 76, 0.12), transparent 40%),
+    url('../assets/img/fondopag1.webp') right center / auto 95% no-repeat,
     var(--azul-marino);
 }
 
 .decorative-tag {
   display: inline-block;
   font-family: var(--ff-script);
-  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
   color: var(--blanco-calido);
   padding: 8px 24px;
  }
 
 .cover-name {
   font-family: var(--ff-script);
-  font-size: var(--fs-nombre);
+  font-size: clamp(4.5rem, 18vw, 8.5rem); 
   color: var(--blanco-calido);
   line-height: 1;
   margin-bottom: 30px;
@@ -364,21 +364,25 @@ font-synthesis: none;           /* evita bold/italic sintético */
 
 .date-num {
   font-family: var(--ff-serif);
-  font-size: clamp(4rem, 15vw, 6.5rem);
+  font-size: clamp(4.5rem, 17vw, 7.5rem);
   color: var(--dorado);
   line-height: 1;
+}
+.page-cover.in-view .date-num {
+animation: heartbeat 4.4s ease-in-out infinite;
+transform-origin: center center;
 }
 
 .date-month {
   font-family: var(--ff-script);
-  font-size: var(--fs-subtitulo);
+  font-size:  clamp(1.5rem, 4vw, 2.2rem);
   letter-spacing: 3px;
   color: var(--blanco-calido);
 }
 
 .date-year {
   font-family: var(--ff-script);
-  font-size: 1.4rem;
+  font-size:  clamp(1.5rem, 3.5vw, 2rem);
   letter-spacing: 6px;
   color: var(--dorado-claro);
   margin-top: 8px;
@@ -404,6 +408,28 @@ font-synthesis: none;           /* evita bold/italic sintético */
 @keyframes bounceDown {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(10px); }
+}
+/* ✅ Ajuste del contador en la portada */
+.page-cover .countdown {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* En móviles, hacemos las cajas del contador un poco más compactas */
+@media (max-width: 480px) {
+    .page-cover .countdown {
+        gap: 6px;
+        max-width: 320px;
+    }
+    .page-cover .cd-box {
+        padding: 10px 4px;
+    }
+    .page-cover .cd-num {
+        font-size: 1.3rem;
+    }
+    .page-cover .cd-label {
+        font-size: 0.55rem;
+    }
 }
 
 /* ============ 🎬 PÁGINA 2: VIDEO + BIENVENIDA ============ */
@@ -439,7 +465,10 @@ font-synthesis: none;           /* evita bold/italic sintético */
 
 .page-intro .section-title {
   text-shadow: 0 2px 20px rgba(7, 11, 61, 0.8), 0 0 30px rgba(239, 182, 76, 0.5);
+  font-family: var(--ff-script);
+  font-size: 5rem; /* o el valor que quieras */
 }
+
 
 .page-intro .parents-names {
   text-shadow: 0 2px 15px rgba(7, 11, 61, 0.7);
@@ -501,10 +530,15 @@ font-synthesis: none;           /* evita bold/italic sintético */
   line-height: 1.7;
   text-transform: none;        /* ✅ conserva el caso original */
   text-wrap: pretty;           /* ✅ salto de línea más elegante */
-  p, span, h1, h2, h3, h4, h5, h6, li, blockquote {
+}
+/* ✅ Corregido: regla independiente para elementos internos (evita anidamiento inválido) */
+.page-intro .intro-quote p,
+.page-intro .intro-quote span,
+.page-intro .intro-quote li,
+.page-intro .intro-quote blockquote {
   text-transform: none;
 }
-}
+
 /* ============ 🏷️ FILA ============ */
 .fila {
   display: flex;
@@ -640,6 +674,29 @@ font-synthesis: none;           /* evita bold/italic sintético */
   text-transform: uppercase;
   color: var(--texto-muted);
 }
+/* ✅ Ajustes para la página combinada Fecha + Regalos */
+.page-date .info-card {
+    margin-top: 30px;
+    background: none;
+    border: none;
+    padding: 32px 24px;
+}
+
+.page-date .info-card:first-of-type {
+    margin-top: 40px;
+}
+
+/* Asegurar que los elementos tengan animación escalonada */
+.page-date.in-view > .page-inner > .date-showcase { transition-delay: 0.1s; }
+.page-date.in-view > .page-inner > .time-announce { transition-delay: 0.3s; }
+.page-date.in-view > .page-inner > .info-card:nth-of-type(2) { transition-delay: 0.5s; }
+.page-date.in-view > .page-inner > .info-card:nth-of-type(3) { transition-delay: 0.7s; }
+
+@media (max-width: 480px) {
+    .page-date .info-card {
+        padding: 24px 16px;
+    }
+}
 
 /* ============ 🎁 PÁGINA 4: REGALOS Y VESTIMENTA ============ */
 .page-gifts .info-card,
@@ -648,6 +705,7 @@ font-synthesis: none;           /* evita bold/italic sintético */
 .page-gifts .info-note,
 .page-gifts .dress-item {
   font-family: var(--ff-serif);
+
 }
 
 .info-card {
@@ -684,6 +742,13 @@ font-synthesis: none;           /* evita bold/italic sintético */
   color: var(--texto-suave);
   line-height: 1.7;
   margin-bottom: 20px;
+}
+
+/* También para los elementos internos si es necesario */
+.page-date .info-text br,
+.page-gifts .info-text br,
+.info-text br {
+  text-transform: none !important;
 }
 
 .info-note {
@@ -777,14 +842,6 @@ font-synthesis: none;           /* evita bold/italic sintético */
 }
 
 /* ============ 🖼️ PÁGINA 6: GALERÍA ============ */
-.page-gallery .section-title {
-  font-family: var(--ff-script);
-  font-size: var(--fs-titulo);
-  color: var(--dorado);
-  margin-bottom: 20px;
-  display: inline-block;
-  font-weight: normal;
-}
 
 .frame-slideshow {
   position: relative;
@@ -860,6 +917,36 @@ font-synthesis: none;           /* evita bold/italic sintético */
   transform: scale(1.3);
   box-shadow: 0 0 10px rgba(239, 182, 76, 0.7);
 }
+/* ============ NUEVO TÍTULO DE GALERÍA ============ */
+.page-gallery .section-title {
+  font-family: 'VeryBerry', 'Great Vibes', cursive; 
+  font-size: var(--fs-titulo);
+  color: var(--dorado-oscuro);
+  margin-bottom: 20px;
+  display: inline-block;
+  font-weight: normal;
+  text-shadow: 0 2px 12px rgba(201, 146, 31, 0.4);
+}
+
+.title-line1 {
+  font-family: var(--ff-script); /* VeryBerry */
+  /* hereda el tamaño de .section-title */
+  font-size: 0.8em;
+}
+
+.title-line2 {
+  font-family: var(--ff-serif); /* Tiro Bangla */
+  /* hereda el tamaño base */
+}
+
+.title-line2 .serif-text {
+  font-family: inherit;
+}
+
+.title-line2 .script-big {
+  font-family: var(--ff-script); /* VeryBerry */
+  font-size: calc(1em + 10px); /* 10px más grande que el resto */
+}
 
 /* ============ 💌 PÁGINA 7: DESPEDIDA ============ */
 .page-end {
@@ -885,7 +972,7 @@ font-synthesis: none;           /* evita bold/italic sintético */
   font-size: var(--fs-nombre);
   color: var(--dorado);
   line-height: 1;
-  margin-bottom: 5px;  /* ✅ reducido de 30px a 10px */
+  margin-bottom: 5px;
   text-shadow: 0 4px 30px rgba(239, 182, 76, 0.5);
   font-weight: normal;
 }
@@ -894,7 +981,7 @@ font-synthesis: none;           /* evita bold/italic sintético */
 .end-deco {
   width: clamp(180px, 40vw, 280px);
   height: auto;
-  margin-bottom: -40px;  /* ✅ Superpone el mensaje sobre la imagen */
+  margin-bottom: -40px;
   opacity: 0.9;
   filter: drop-shadow(0 4px 20px rgba(239, 182, 76, 0.3));
   position: relative;
@@ -1022,21 +1109,26 @@ font-synthesis: none;           /* evita bold/italic sintético */
   background: linear-gradient(to left, transparent, var(--dorado));
 }
 
+
 /* ============ 🏷️ ÍCONO ETIQUETA (Dress Code) ============ */
-.page-gifts .info-card:last-child .info-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 130px;
-  font-size: 0;
+.page-gifts .info-card:last-child .info-icon,
+.page-date .info-card:last-child .info-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 130px;
+    font-size: 0;
 }
 
-.page-gifts .info-card:last-child .etiqueta-icon {
-  width: 60%;
-  max-width: 220px;
-  aspect-ratio: 361 / 338;
-  height: auto;
-  display: block;
+.page-gifts .info-card:last-child .etiqueta-icon,
+.page-date .info-card:last-child .etiqueta-icon {
+    width: 60%;
+    max-width: 220px;
+    aspect-ratio: 361 / 338;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 2px 8px rgba(239, 182, 76, 0.3));
 }
 
 /* ============ 🎨 ICONOS ILUSTRACIÓN ============ */
@@ -1044,7 +1136,7 @@ font-synthesis: none;           /* evita bold/italic sintético */
 .page-venue .info-card:first-child .info-icon,
 .page-venue .info-card:last-child .info-icon {
   display: flex;
-  justify-content: center;
+  align-items: center;
   font-size: 0;
 }
 
@@ -1053,6 +1145,7 @@ font-synthesis: none;           /* evita bold/italic sintético */
   height: auto;
   display: block;
   max-width: 170px;
+  margin: 0 auto;
   filter: drop-shadow(0 2px 8px rgba(239, 182, 76, 0.3));
 }
 
@@ -1166,7 +1259,7 @@ font-synthesis: none;           /* evita bold/italic sintético */
         rgba(13, 21, 106, 0.97) 100%
       ),
       radial-gradient(ellipse at top, rgba(239, 182, 76, 0.12), transparent 60%),
-      url('../assets/img/fondopag1.webp') right center / auto 60% no-repeat,
+      url('../assets/img/fondopag1.webp') right center / auto 98% no-repeat,
       var(--azul-marino);
   }
   .quote-container {
@@ -1178,8 +1271,9 @@ font-synthesis: none;           /* evita bold/italic sintético */
   }
   .page-intro .intro-quote {
     padding: 15px;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
   }
+  
 }
 
 /* 🖥️ Tablet */
@@ -1236,6 +1330,9 @@ font-synthesis: none;           /* evita bold/italic sintético */
 
 /* ♿ Accesibilidad */
 @media (prefers-reduced-motion: reduce) {
+  .page-date .date-big {
+    animation: heartbeat 5.4s ease-in-out infinite !important;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -1248,4 +1345,52 @@ font-synthesis: none;           /* evita bold/italic sintético */
     opacity: 1;
     transform: none;
   }
+}
+
+/* ============ NUEVO TÍTULO DE GALERÍA (con TiroBangla) ============ */
+.page-gallery .section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title-line1 {
+  margin-bottom: 0; /* quita el espacio extra */
+}
+.title-line2 {
+  margin-top: -2.5rem; /* sube la segunda línea */
+  font-size: var(--fs-titulo);
+  font-weight: normal;
+  color: var(--dorado-oscuro);
+  text-shadow: 0 2px 12px rgba(201, 146, 31, 0.4);
+  margin-bottom: 20px;
+}
+
+/* Línea 1: "Un recorrido de" en TiroBangla */
+.title-line1 {
+  font-family: var(--ff-serif); /* TiroBangla-Regular */
+}
+
+/* Línea 2: base en TiroBangla */
+.title-line2 {
+  font-family: var(--ff-serif); /* TiroBangla-Regular */
+}
+
+.title-line2 .serif-text {
+  font-family: inherit; /* mantiene TiroBangla */
+}
+
+/* Número "15" : 5px más grande que el resto, con VeryBerry para darle estilo */
+.title-line2 .big-number {
+  font-family: var(--ff-script); /* VeryBerry (estilo elegante) */
+  font-size: calc(1em + 35px); /* 35px más grande que la base */
+  display: inline-block;
+}
+/* Forzar que los textos de las tarjetas respeten mayúsculas/minúsculas */
+.info-text {
+  text-transform: none !important;
+}
+/* Forzar que el quote de la página 2 respete mayúsculas/minúsculas */
+.page-intro .intro-quote,
+.page-intro .intro-quote * {
+  text-transform: none !important;
+  font-variant: normal !important;
 }
