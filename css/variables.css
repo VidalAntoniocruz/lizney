@@ -1,0 +1,81 @@
+/* ============ FUENTES PERSONALIZADAS ============ */
+@font-face {
+  font-family: 'Deliciously';
+  src: url('../assets/fonts/deliciously.woff2') format('woff2'),
+       url('../assets/fonts/deliciously.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Felix Titling';
+  src: url('../assets/fonts/felixtitling.woff2') format('woff2'),
+       url('../assets/fonts/felixtitling.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'VeryBerry';
+  src: url('../assets/fonts/VeryBerry.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tiro Bangla';
+  src: url('../assets/fonts/TiroBangla-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ============ COLORES ============ */
+  --azul-marino: #0d156a;
+  --azul-profundo: #070b3d;
+  --azul-oscuro: #050827;
+  --azul-claro: #1a2285;
+  --dorado: #E0CA99;
+  --dorado-claro: #f5ce6a;
+  --dorado-oscuro: #c9921f;
+  --blanco-calido: #B89027;
+  --texto-suave: #e8e4d8;
+  --texto-muted: #a0a0b8;
+
+  /* ============ TIPOGRAFÍAS ============ */
+  --ff-script: 'VeryBerry', 'Great Vibes', cursive;
+  --ff-serif: 'Tiro Bangla', 'Cinzel', serif;
+  --ff-body: 'Felix Titling', 'Cormorant Garamond', serif;
+
+  /* ============ TAMAÑOS FLUIDOS ============ */
+  --fs-hero: clamp(3.5rem, 12vw, 6rem);
+  --fs-nombre: clamp(4rem, 16vw, 7.5rem);
+  --fs-titulo: clamp(2rem, 6vw, 3rem);
+  --fs-subtitulo: clamp(1.3rem, 3vw, 1.8rem);
+  --fs-cuerpo: clamp(1rem, 2.5vw, 1.15rem);
+  --fs-pequeno: clamp(0.8rem, 2vw, 0.9rem);
+
+  /* ============ RADIOS ============ */
+  --radio-md: 14px;
+  --radio-lg: 24px;
+
+  /* ============ SOMBRAS ============ */
+  --sombra-dorada: 0 0 40px rgba(239, 182, 76, 0.35);
+  --sombra-suave: 0 4px 16px rgba(0, 0, 0, 0.3);
+
+  /* ============ Z-INDEX ============ */
+  --z-flotante: 100;
+  --z-sobre: 200;
+  --z-sparkles: 250;
+
+  /* ============ TRANSICIONES ============ */
+  --transicion-rapida: all 0.3s ease;
+
+  /* ============ MARCO DE LA GALERÍA ============ */
+  --aspecto-marco: 403 / 618;
+  --marco-top: 23.19%;
+  --marco-bottom: 23.19%;
+  --marco-left: 19.16%;
+  --marco-right: 19.16%;
+}
