@@ -1356,7 +1356,7 @@ transform-origin: center center;
   margin-bottom: 0; /* quita el espacio extra */
 }
 .title-line2 {
-  margin-top: -2.5rem; /* sube la segunda línea */
+  margin-top: -0.5rem; /* sube la segunda línea */
   font-size: var(--fs-titulo);
   font-weight: normal;
   color: var(--dorado-oscuro);
